@@ -10,7 +10,7 @@ import streamlit as st
 import plotly.express as px
 
 #Model Loading
-model = keras.models.load_model(r"Bitcoin_Price_Prediction_model.keras")
+model = tf.keras.models.load_model(r"Bitcoin_Price_Prediction_model.keras")
 
 
 # Webpage Headers - Centered and Styled
