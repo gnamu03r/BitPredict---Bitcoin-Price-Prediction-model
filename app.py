@@ -11,7 +11,7 @@ import plotly.express as px
 
 #Model Loading
 # Load the model with specific options for compatibility
-model_path = r"C:\Users\umang\JupyterLab\Bitcoin_Price_Prediction_model.keras"
+model_path = r"Bitcoin_Price_Prediction_model.keras"
 model = keras.models.load_model(model_path, compile=False)  # Disable compilation if not needed
 
 # Example of adjusting input shape for older models (if needed)
