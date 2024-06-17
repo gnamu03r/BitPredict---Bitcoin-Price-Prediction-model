@@ -94,7 +94,7 @@ comparison_df['Date'] = comparison_df['Date'].astype(str)
 #Plotting the prediction accuray chart using Plotly
 fig = px.line(comparison_df, x='Date', y=['Predicted Price', 'Actual Price'],
               labels={'value': 'Price', 'Date': 'Date'}, title='Prediction Accuracy Chart - Predicted vs Actual Price')
-fig.update_traces(line=dict(color='#0000FF'), selector=dict(name='Predicted Price'))
+fig.update_traces(line=dict(color='#00BFFF'), selector=dict(name='Predicted Price'))
 fig.update_traces(line=dict(color='green'), selector=dict(name='Actual Price'))
 st.plotly_chart(fig)
 # Add space after Prediction Accuracy Chart section
