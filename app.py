@@ -10,21 +10,7 @@ import streamlit as st
 import plotly.express as px
 
 #Model Loading
-# Define a custom function to handle loading if needed
-def custom_model_loader(model_path):
-    custom_objects = {'InputLayer': keras.layers.InputLayer}  # Add more custom layers if needed
-    return keras.models.load_model(model_path, custom_objects=custom_objects)
-
-# Example usage
-model_path = r"Bitcoin_Price_Prediction_model.keras"
-model = custom_model_loader(model_path)
-
-# Example of adjusting input shape if necessary
-if isinstance(model.layers[0], keras.layers.InputLayer):
-    model.layers[0].batch_input_shape = (None, 100, 1)  # Adjust input shape if necessary
-
-# Compile the model if needed
-model.compile(optimizer='adam', loss='mse')
+model = keras.models.load_model(r"Bitcoin_Price_Prediction_model.keras")
 
 
 # Webpage Headers - Centered and Styled
