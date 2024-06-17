@@ -10,7 +10,16 @@ import streamlit as st
 import plotly.express as px
 
 #Model Loading
-model = keras.models.load_model(r"Bitcoin_Price_Prediction_model.keras")
+# Load the model with specific options for compatibility
+model_path = r"C:\Users\umang\JupyterLab\Bitcoin_Price_Prediction_model.keras"
+model = keras.models.load_model(model_path, compile=False)  # Disable compilation if not needed
+
+# Example of adjusting input shape for older models (if needed)
+if isinstance(model.layers[0], keras.layers.InputLayer):
+    model.layers[0].batch_input_shape = (None, 100, 1)  # Adjust input shape if necessary
+
+# Compile the model if needed
+model.compile(optimizer='adam', loss='mse')
 
 
 # Webpage Headers - Centered and Styled
